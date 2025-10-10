@@ -50,7 +50,16 @@ public class Contacto {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    //equalss se hace aqui para luego en la clase mensaje ejecutarlo, para ver si son iguales
+    public boolean equals(Object p){
+        if (this==p) return true;
+        if (p==null) return false;
+        if(getClass()!=p.getClass()) return false;
+        Contacto c = (Contacto) p;
+        
+        //se podria probar tambien igualando otros atributos pero con tfn es suficiente
+        return (this.getTelefono() == c.getTelefono());
+    }
     @Override
     public String toString() {
         if (this.email !=null) {

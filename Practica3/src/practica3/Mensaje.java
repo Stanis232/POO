@@ -10,10 +10,20 @@ package practica3;
  */
 public class Mensaje {
     private String mensaje;
+    private Contacto origen;
+    private Contacto destino;
 
-    public Mensaje(String mensaje) {
-        this.mensaje = mensaje;
+    public Mensaje(String mensaje, Contacto origen, Contacto destino) {
+        
+       
+        if(mensaje!=null && !origen.equals(destino)){
+            this.origen = origen;
+            this.destino = destino;
+            this.mensaje = mensaje;
+        }
+        
     }
+     
 
     public String getMensaje() {
         return mensaje;

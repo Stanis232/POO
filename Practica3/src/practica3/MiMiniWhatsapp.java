@@ -23,7 +23,17 @@ private Mensaje[] mensajes = new Mensaje[100];
         if(this.siguiente==100){
             return false;
         }
-        //me voy jejeje
-        return false;
+        this.mensajes[this.siguiente]= mensaje;
+        this.siguiente++;
+        return true;
+       
+        
+    }
+    
+    public void mostrarMensajes(){
+        for(int i=0; i<this.siguiente; i++){
+            
+            System.out.println(this.mensajes[i].getMensaje());
+        }
     }
 }
