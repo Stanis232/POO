@@ -9,5 +9,10 @@ package practica4;
  * @author stanis
  */
 public class Casa {
+    private boolean sensoresActivados;
     
+    private Sensor[] sensores = new Sensor[10];
+    
+    private Evento[] evento = new Evento[10];
+    private int contadorSensores,contadorEventos;
 }
