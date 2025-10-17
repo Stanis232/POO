@@ -49,6 +49,14 @@ public class Sensor {
         return camara;
     }
 
+    public void setActivado(boolean activado) {
+        this.activado = activado;
+    }
+
+    public boolean isActivado() {
+        return activado;
+    }
+
     
   
     
