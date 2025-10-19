@@ -12,12 +12,14 @@ public class Cita {
     private String titulo;
     private Fecha fecha;
     //lo he hecho asi pero no se si esta bien?
-        private Persona[] siguiente = new Persona[5];
+    private Persona[] siguiente = new Persona[5];
 
     public Cita(String titulo, Fecha fecha) {
         this.titulo = titulo;
         this.fecha = fecha;
     }
+    
+    
     
     
     
