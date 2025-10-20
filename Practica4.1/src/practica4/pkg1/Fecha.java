@@ -14,9 +14,13 @@ public class Fecha {
 
     public Fecha(String fecha, int horaInicio, int horaFinal) {
         this.fecha = fecha;
-        if(horaInicio>8 && horaFinal<=18){
+        if(horaInicio>=8 && horaFinal<=18){
              this.horaInicio = horaInicio;
                this.horaFinal = horaFinal;
+        }else {
+         
+            this.horaInicio=0;
+              this.horaFinal = 0;
         }
         
        

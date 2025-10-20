@@ -15,5 +15,16 @@ public class Persona {
         this.nombre = nombre;
         this.idUsuario = idUsuario;
     }
-    
+
+    public String getIdUsuario() {
+        return idUsuario;
+    }
+    public boolean equals(Object p){
+        if(this==p)return true;
+        if(p==null)return false;
+        if(getClass()!=p.getClass()) return false;
+        Persona per = (Persona) p;
+        //depende del tipo contenido se tiene que comparar con == o equals en el case de String es con equals
+        return (this.getIdUsuario().equals(per.getIdUsuario()));
+    }
 }
