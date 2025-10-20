@@ -25,5 +25,10 @@ public class Fecha {
         
        
     }
+
+    @Override
+    public String toString() {
+        return "Fecha{" + "fecha=" + fecha + ", horaInicio=" + horaInicio + ", horaFinal=" + horaFinal + '}';
+    }
     
 }

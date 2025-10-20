@@ -40,6 +40,26 @@ public class Cita {
         return true;
         
     }
+
+   /* @Override
+    public String toString() {
+        return "Cita{" + "titulo=" + titulo + ", fecha=" + fecha + ", siguiente=" + siguiente + ", asistentes=" + asistentes + '}';
+    }*/
+
+    @Override
+    public String toString() {
+        
+        
+        
+            String    aux = "**********************************\ntitulo: " + titulo + "**********************************\nfecha: " + fecha;
+
+         aux += "**********************************\nasistentes: ";
+        for (int i = 0; i < siguiente; i++) {
+            aux += asistentes[i].toString() + "\n";
+        }
+        
+           return aux;
+    }
     
     
     

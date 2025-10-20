@@ -27,4 +27,10 @@ public class Persona {
         //depende del tipo contenido se tiene que comparar con == o equals en el case de String es con equals
         return (this.getIdUsuario().equals(per.getIdUsuario()));
     }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "nombre=" + nombre + ", idUsuario=" + idUsuario + '}';
+    }
+    
 }
