@@ -35,10 +35,8 @@ public class Alumno {
         return telefono;
     }
 
-    public Convocatoria[] getConv() {
-        return conv;
-    }
-   public boolean equals (Object p){
+   
+   public boolean equals(Object p){
        if(this==p) return true;
        if(p==null) return false;
        if(getClass()!=p.getClass()) return false;
