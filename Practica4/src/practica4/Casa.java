@@ -42,7 +42,7 @@ public class Casa {
         this.contadorSensores++;
         return true;
     }
-     public boolean añadirSensorSinCamara(int id){
+     public boolean anadirSensor(int id){
        return anadirSensor(id,null);
     }
     //repasar esto pq tengo lio de cuando o no tiene que ser void o boolean, pq lo he hecho con boolean pero no tiene pq devolver falso, preguntar a falax

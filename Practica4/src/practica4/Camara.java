@@ -28,7 +28,7 @@ public class Camara {
         if(getClass()!=p.getClass()) return false;
         Camara otraCamara = (Camara) p;
         
-        //se podria probar tambien igualando otros atributos pero con tfn es suficiente
+        //se podria probar tambien igualando otros atributos pero con ip es suficiente
         return (this.getIp().equals(otraCamara.getIp()));
     }
     

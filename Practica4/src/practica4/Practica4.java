@@ -13,7 +13,7 @@ public class Practica4 {
 public static void main(String[] args) {
 Casa micasa = new Casa();
 //preguntar a la profe por correo
-micasa.añadirSensorSinCamara(1);
+micasa.anadirSensor(1);
 micasa.anadirSensor(2, "150.150.150.150");
 micasa.anadirSensor(3, "150.150.150.150");
 if (!micasa.anadirSensor(3, "150.150.150.150")){
@@ -34,5 +34,8 @@ micasa.anadirEvento(null, null);
 System.out.println(micasa.toString());
 micasa.cambiarEstadoAlarma();
 System.out.println(micasa.toString());
+micasa.cambiarEstadoAlarma();
+System.out.println(micasa.toString());
+
 }
 }
