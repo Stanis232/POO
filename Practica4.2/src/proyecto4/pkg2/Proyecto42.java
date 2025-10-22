@@ -27,11 +27,11 @@ public class Proyecto42 {
         System.out.println("\n--- Añadiendo convocatorias a Stanis ---");
         
         // Obtenemos el array de convocatorias de Stanis
-        Convocatoria[] convocatoriasStanis = alumno1.getConv();
+      // Convocatoria[] convocatoriasStanis = alumno1.getConv();
         
         // Creamos y asignamos las convocatorias
-        convocatoriasStanis[0] = new Convocatoria("Enero", 8);
-        convocatoriasStanis[1] = new Convocatoria("Junio", 9);
+       // convocatoriasStanis[0] = new Convocatoria("Enero", 8);
+       // convocatoriasStanis[1] = new Convocatoria("Junio", 9);
 
 
         // 5. Mostramos toda la información de la asignatura

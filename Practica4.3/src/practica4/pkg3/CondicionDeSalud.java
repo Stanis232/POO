@@ -28,6 +28,11 @@ public class CondicionDeSalud {
     public boolean isCronica() {
         return cronica;
     }
+
+    @Override
+    public String toString() {
+        return "CondicionDeSalud{" + "nombre=" + nombre + ", cronica=" + cronica + '}';
+    }
     
    public boolean equals(Object p){
        if (this==p) return true;

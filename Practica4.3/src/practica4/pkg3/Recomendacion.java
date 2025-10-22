@@ -10,5 +10,19 @@ package practica4.pkg3;
  */
 public class Recomendacion {
     private String descripcion;
+    private CondicionDeSalud[] condi;
+
+    public Recomendacion(String descripcion, CondicionDeSalud[] condi) {
+        this.descripcion = descripcion;
+        this.condi = condi;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public CondicionDeSalud[] getCondi() {
+        return condi;
+    }
     
 }
