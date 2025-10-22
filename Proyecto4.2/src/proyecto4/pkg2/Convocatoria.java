@@ -34,4 +34,10 @@ public class Convocatoria {
     public Convocatoria copia(){
         return new Convocatoria(mes, nota);
     }
+
+    @Override
+    public String toString() {
+        return "Convocatoria{" + "mes=" + mes + ", nota=" + nota + '}';
+    }
+    
 }

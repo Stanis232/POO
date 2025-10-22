@@ -26,8 +26,44 @@ public class Alumno {
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
-   
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public Convocatoria[] getConv() {
+        return conv;
+    }
+   public boolean equals (Object p){
+       if(this==p) return true;
+       if(p==null) return false;
+       if(getClass()!=p.getClass()) return false;
+       Alumno a= (Alumno) p;
+       return ((getTelefono()==a.getTelefono() && (getNombre().equals(a.getNombre()))));
+   }
+
+    @Override
+    public String toString() {
+        
+         String aux = "nombre=" + nombre + ", telefono=" + telefono;
+        
+        for(int i=0; i<2; i++){
+            
+            if (conv[i] != null) {
+    // Si no es nulo, entonces sí podemos usarlo.
+    aux += conv[i].toString() + "\n";
+}
+            
+            }
+          return aux;
+        }
+        
+    }
   
           
           
-}
+
