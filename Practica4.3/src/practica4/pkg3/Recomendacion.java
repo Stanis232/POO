@@ -9,5 +9,6 @@ package practica4.pkg3;
  * @author stanis
  */
 public class Recomendacion {
+    private String descripcion;
     
 }
