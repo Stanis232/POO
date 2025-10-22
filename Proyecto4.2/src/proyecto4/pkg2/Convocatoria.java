@@ -9,5 +9,29 @@ package proyecto4.pkg2;
  * @author stanis
  */
 public class Convocatoria {
+    private String mes;
+    private int nota;
+
+    public Convocatoria(String mes, int nota) {
+        this.mes = mes;
+        this.nota = nota;
+    }
+
+    public Convocatoria() {
+           this.mes = null;
+        this.nota = -1;
+        
+    }
+
+    public String getMes() {
+        return mes;
+    }
+
+    public int getNota() {
+        return nota;
+    }
     
+    public Convocatoria copia(){
+        return new Convocatoria(mes, nota);
+    }
 }

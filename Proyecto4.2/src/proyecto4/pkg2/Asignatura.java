@@ -9,5 +9,11 @@ package proyecto4.pkg2;
  * @author stanis
  */
 public class Asignatura {
+    private int siguiente;
+    private Alumno[] alumni= new Alumno[100];
+
+    public Asignatura(int siguiente) {
+        this.siguiente = 0;
+    }
     
 }
