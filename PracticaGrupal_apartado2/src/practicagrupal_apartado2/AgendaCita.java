@@ -14,27 +14,53 @@ public class AgendaCita {
     
     public boolean agendarCita(Cita c, Medico m){
         if(c == null || m == null) return false;
-        if(!citas.contains(c) && m.getMAXCITASDIARIAS() != contarCitasActivas(m, c.getFechaHora().toLocalDate())){
-            citas.add(c);
-            return true;
-        }
+        
+        
+      if(m.getMAXCITASDIARIAS() <= contarCitasActivas(m, c.getFechaHora().toLocalDate())){
         return false;
+    }
+      
+      // 2. Verificar que NO haya otra cita a esa misma hora con el mismo médico
+        for(Cita existente : citas){
+        if(existente.getFechaHora().equals(c.getFechaHora()) && 
+           !existente.getAnulada() && 
+           existente.getMedico().equals(m)) { // Importante: verificar que sea el mismo médico
+            return false; // Ya hay cita a esa hora
+        }
+    }
+
+    // Si pasa las comprobaciones, añadimos
+    citas.add(c);
+    return true;
+        
+        
+        
     }
     
     
     //
     public LocalDateTime buscarDisponibilidad(LocalDateTime fechaPropuesta){
-        LocalDateTime fecha = fechaPropuesta;
-        boolean ocupado = false;
-        
+    LocalDateTime fecha = fechaPropuesta;
+    boolean ocupado;
+
+    // Bucle: mientras esté ocupado, prueba 15 minutos más tarde
+    do {
+        ocupado = false;
         for(Cita c : citas){
+            // Si coincide fecha y hora y la cita no está anulada -> OCUPADO
             if(c.getFechaHora().equals(fecha) && !c.getAnulada()){
                 ocupado = true;
-
+                break; // Salimos del for para sumar tiempo
             }
         }
-        return fecha;
-    }
+        
+        if(ocupado){
+            fecha = fecha.plusMinutes(15); // Probamos el siguiente hueco
+        }
+    } while(ocupado);
+    
+    return fecha;
+}
     
     public boolean cancelarCitaAgenda(Cita c, String causa){
         if(c == null || causa == null) return false;

@@ -40,7 +40,21 @@ public class Consulta {
         } else this.telefonica = false;
     }
 
+    public void prescribirMedicacion(Medicamento m) {
+        if (m == null) return;
 
+        System.out.println("Prescribiendo " + m.getNombre() + "...");
+
+        // "En caso de ser tratamiento crónico, se pondrá una fecha de finalización de al menos 10 años"
+        if (m.esCronico()) {
+            // Calculamos la fecha: hoy + 10 años
+            // Usamos la fecha de la consulta como referencia de inicio
+            m.setFechaFin(this.fecha.toLocalDate().plusYears(10));
+            System.out.println(" -> Tratamiento crónico detectado. Fecha fin establecida a: " + m.getFechaFin());
+        } else {
+             System.out.println(" -> Tratamiento puntual.");
+        }
+    }
     
     
     

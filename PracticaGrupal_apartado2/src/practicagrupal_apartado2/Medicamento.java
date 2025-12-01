@@ -39,8 +39,8 @@ public class Medicamento {
     public int getFrecuencia() {
         return frecuencia;
     }
-
-    public boolean isCronico() {
+    
+    public boolean esCronico() {
         return cronico;
     }
 
