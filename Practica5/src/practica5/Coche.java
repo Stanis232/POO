@@ -102,21 +102,45 @@ public class Coche {
             }
              public void frenaCurva(){
                  this.velCurva=this.velCurva-FRENACURVA;
-                 if(velCurva>=0){
+                 if(velCurva<=0){
                      this.velCurva=0;
                  }
                 
             }
              public void frenaRecta(){
                 this.velRecta=this.velRecta-FRENARECTA;
-                if(velRecta>=0){
+                if(velRecta<=0){
                      this.velRecta=0;
                  }
                 
             }
              public void mejora(){
-                 this.velRecta=this.velRecta+ACELERARECTA;
-                 this.velCurva=this.velRecta+ACELERACURVA;
+                 this.velRecta+=MEJORA;
+                 this.velCurva+=MEJORA;
              }
+             public double tiempoRecta(double metros){
+                 if(this.velRecta!=0){
+                     return ((metros/this.velRecta)*3600);
+                 }return -1;
+             }
+             
+             public double tiempoCurva(double metros){
+                 if(this.velCurva!=0){
+                     return ((metros/this.velCurva)*3600);
+                 }return -1;
+             }
+             public boolean isDeteneido(){
+                 if(this.velRecta<=0 ||this.velCurva<=0){
+                     return true;
+                     
+                         
+                     }
+                 return false;
+             }
+             
+             //profe sol
+             public boolean estaDetenido() {
+    return (velRecta == 0 || velCurva == 0);
+}
              
 }
