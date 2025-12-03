@@ -20,16 +20,16 @@ public class AgendaCita {
         return false;
     }
       
-      // 2. Verificar que NO haya otra cita a esa misma hora con el mismo médico
+      
         for(Cita existente : citas){
         if(existente.getFechaHora().equals(c.getFechaHora()) && 
            !existente.getAnulada() && 
-           existente.getMedico().equals(m)) { // Importante: verificar que sea el mismo médico
-            return false; // Ya hay cita a esa hora
+           existente.getMedico().equals(m)) { 
+            return false; 
         }
     }
 
-    // Si pasa las comprobaciones, añadimos
+    
     citas.add(c);
     return true;
         
@@ -37,25 +37,23 @@ public class AgendaCita {
         
     }
     
-    
-    //
     public LocalDateTime buscarDisponibilidad(LocalDateTime fechaPropuesta){
     LocalDateTime fecha = fechaPropuesta;
     boolean ocupado;
 
-    // Bucle: mientras esté ocupado, prueba 15 minutos más tarde
+   
     do {
         ocupado = false;
         for(Cita c : citas){
-            // Si coincide fecha y hora y la cita no está anulada -> OCUPADO
+            
             if(c.getFechaHora().equals(fecha) && !c.getAnulada()){
                 ocupado = true;
-                break; // Salimos del for para sumar tiempo
+                break; 
             }
         }
         
         if(ocupado){
-            fecha = fecha.plusMinutes(15); // Probamos el siguiente hueco
+            fecha = fecha.plusMinutes(15); 
         }
     } while(ocupado);
     
@@ -88,7 +86,6 @@ public class AgendaCita {
     }
     
     
-    //
     public ArrayList<Cita> reagendarDia(LocalDate fechaActual, Medico m) {
         
         LocalDate nuevaFecha = buscarProximaFechaDisponible(m, fechaActual.plusDays(1));
@@ -134,7 +131,6 @@ public class AgendaCita {
             }
             fecha = fecha.plusDays(1);
         }
-        return null; 
-    }
-    
+        return null;
+   }
 }

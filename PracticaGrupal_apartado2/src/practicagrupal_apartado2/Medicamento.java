@@ -39,7 +39,7 @@ public class Medicamento {
     public int getFrecuencia() {
         return frecuencia;
     }
-    
+
     public boolean esCronico() {
         return cronico;
     }
@@ -54,6 +54,12 @@ public class Medicamento {
     public void setFechaFin(LocalDate fechaFin) {
         this.fechaFin = fechaFin;
     }
+
+    public void setFechaInicio(LocalDate fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+    
+    
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

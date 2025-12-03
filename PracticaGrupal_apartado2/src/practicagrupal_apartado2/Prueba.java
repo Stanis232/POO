@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package practicagrupal_apartado2;
 
 import java.time.LocalDateTime;
@@ -39,6 +35,13 @@ public class Prueba {
 
     public void setRutaInforme(String rutaInforme) {
         this.rutaInforme = rutaInforme;
+    }
+
+    
+    
+    @Override
+    public String toString() {
+        return "Prueba{" + "fecha=" + fecha + ", centro=" + centro + ", rutaInforme=" + rutaInforme + '}';
     }
     
     

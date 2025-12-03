@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package practicagrupal_apartado2;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 
@@ -34,28 +31,70 @@ public class Consulta {
         this.tipoInforme = tipoInforme;
     }
 
+    public String getMotivo() {
+        return motivo;
+    }
+
+    public boolean isTelefonica() {
+        return telefonica;
+    }
+
+    public boolean isInformeSeguimiento() {
+        return informeSeguimiento;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public LocalDateTime getFecha() {
+        return fecha;
+    }
+
+    public TipoConsulta getTipo() {
+        return tipo;
+    }
+
+    public String getCentro() {
+        return centro;
+    }
+
+    public String getEspecialidad() {
+        return especialidad;
+    }
+
+    public TipoInforme getTipoInforme() {
+        return tipoInforme;
+    }
+    
+    
+
     public void setTelefonica(boolean telefonica) {
-        if(medico.getEspecialidad() == Especialidad.MEDICINA_GENERAL || medico.getEspecialidad() == Especialidad.ENFERMERO){
+        if(esCitaTelefonica()){
             this.telefonica = true;
         } else this.telefonica = false;
     }
 
-    public void prescribirMedicacion(Medicamento m) {
-        if (m == null) return;
 
-        System.out.println("Prescribiendo " + m.getNombre() + "...");
-
-        // "En caso de ser tratamiento crónico, se pondrá una fecha de finalización de al menos 10 años"
-        if (m.esCronico()) {
-            // Calculamos la fecha: hoy + 10 años
-            // Usamos la fecha de la consulta como referencia de inicio
-            m.setFechaFin(this.fecha.toLocalDate().plusYears(10));
-            System.out.println(" -> Tratamiento crónico detectado. Fecha fin establecida a: " + m.getFechaFin());
-        } else {
-             System.out.println(" -> Tratamiento puntual.");
-        }
+    public boolean esCitaTelefonica(){
+         if(medico.getEspecialidad() == Especialidad.MEDICINA_GENERAL || medico.getEspecialidad() == Especialidad.ENFERMERO){
+            return true;
+        } else return false;
     }
     
     
+    
+    public void prescribirMedicacion(Medicamento m, Paciente paciente) {
+        if (m != null) {
+            this.medico.prescribirMedicacion(paciente, m, LocalDate.EPOCH);
+        } else{
+            System.out.println("No se pudo prescribir el medicamento");
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Consulta{" + "motivo=" + motivo + ", telefonica=" + telefonica + ", informeSeguimiento=" + informeSeguimiento + ", medico=" + medico + ", fecha=" + fecha + ", tipo=" + tipo + ", centro=" + centro + ", especialidad=" + especialidad + ", tipoInforme=" + tipoInforme + '}';
+    }
     
 }

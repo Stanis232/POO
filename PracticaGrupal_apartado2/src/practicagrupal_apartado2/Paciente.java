@@ -1,12 +1,26 @@
 
 package practicagrupal_apartado2;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Paciente extends Usuario{
     private String nombre, direccion;
     private long telefono;
+    private ArrayList<Medicamento> medicamentos;
+    private Historial historial;
+    
+    public Paciente(String nom, String dir, long tel, long cipa, String dni, Historial h){
+        super(dni,cipa);
+        nombre = nom;
+        direccion = dir;
+        if(tel > 0){
+            telefono = tel;
+        }
+        medicamentos = new ArrayList<>();
+        historial = h;
+    }
     
     public Paciente(String nom, String dir, long tel, long cipa, String dni){
         super(dni,cipa);
@@ -15,7 +29,14 @@ public class Paciente extends Usuario{
         if(tel > 0){
             telefono = tel;
         }
-        
+        medicamentos = new ArrayList<>();
+    }
+    
+
+    public void addMedicamento(Medicamento m) {
+        if (m != null) {
+            this.medicamentos.add(m);
+        }
     }
     
     public String getNombre(){
@@ -76,6 +97,28 @@ public class Paciente extends Usuario{
     public boolean cancelarCita(Cita c, String causa, AgendaCita agenda){
         if(c == null || causa == null || agenda == null) return false;
         return agenda.cancelarCitaAgenda(c, causa);
+    }
+    
+    public void mostrarMedicamentos(Paciente p){
+        LocalDate fActual = LocalDate.now();
+        for(Medicamento m: medicamentos){
+            if(m instanceof Medicamento){
+                if(m.getFechaFin().isAfter(fActual)){
+                    System.out.println("-- Tratamiento Pasado --");
+                    System.out.println(m.toString());
+            }
+                else if(m.getFechaFin().isBefore(fActual) || m.getFechaFin() == null){
+                    System.out.println("-- Tratamiento Activo --");
+                    System.out.println(m.toString());
+                }
+            }
+            
+            else if(m instanceof Vacuna){
+                Vacuna v = (Vacuna) m;
+                System.out.println(v.toString());
+            }
+            
+        }
     }
     
 }
