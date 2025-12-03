@@ -129,6 +129,7 @@ public class Coche {
                      return ((metros/this.velCurva)*3600);
                  }return -1;
              }
+             /*
              public boolean isDeteneido(){
                  if(this.velRecta<=0 ||this.velCurva<=0){
                      return true;
@@ -136,11 +137,52 @@ public class Coche {
                          
                      }
                  return false;
-             }
+             }*/
              
              //profe sol
              public boolean estaDetenido() {
     return (velRecta == 0 || velCurva == 0);
 }
              
+             
+          public double tiempoCircuito(Circuito cir){
+                 if(!estaDetenido()){
+                     return(this.tiempoRectaCircuito(cir)+ this.tiempoCurvaCircuito(cir));
+                 }else 
+                     return -1;
+                 
+             }
+
+    private double tiempoRectaCircuito(Circuito cir) {
+            double tiempo=0 ;
+        double[] rectas = cir.getRectas();
+        for (int i = 0; i < rectas.length; i++) {
+            
+            
+            tiempo+= this.tiempoRecta(rectas[i]);
+        }
+        
+        
+        return tiempo;
+    }
+
+    private double tiempoCurvaCircuito(Circuito cir) {
+            double tiempo=0 ;
+        double[] curvas = cir.getCurvas();
+        for (int i = 0; i < curvas.length; i++) {
+            
+            
+            tiempo+= this.tiempoCurva(curvas[i]);
+        }
+        
+        
+        return tiempo;
+    }
+    
+    
+    private double competir(Coche original, Coche otro, Circuito cir, int numvueltas){
+       
+        double   c1 = original.tiempoCircuito(cir);
+        double   c2 = otro.tiempoCircuito(cir);
+    }
 }
