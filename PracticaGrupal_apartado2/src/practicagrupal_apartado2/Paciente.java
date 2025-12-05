@@ -38,7 +38,9 @@ public class Paciente extends Usuario{
             this.medicamentos.add(m);
         }
     }
-    
+    public ArrayList<Medicamento> getMedicamentos() {
+        return this.medicamentos;
+    }
     public String getNombre(){
         return nombre;
     }
