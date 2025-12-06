@@ -180,9 +180,20 @@ public class Coche {
     }
     
     
-    private double competir(Coche original, Coche otro, Circuito cir, int numvueltas){
+    public Resultado competir( Coche otro, Circuito cir, int numvueltas){
        
-        double   c1 = original.tiempoCircuito(cir);
-        double   c2 = otro.tiempoCircuito(cir);
+        double   c1 = this.tiempoCircuito(cir)*numvueltas;
+        double   c2 = otro.tiempoCircuito(cir)*numvueltas;
+        
+        
+        Coche[] listacoche = {
+            this,otro
+        };
+        double[] tiempos = {
+            c1, c2
+        };
+        return new Resultado(listacoche,tiempos);
+        
+        
     }
 }
