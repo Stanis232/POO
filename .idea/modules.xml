@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HolaMundo2122/HolaMundo2122.iml" filepath="$PROJECT_DIR$/HolaMundo2122/HolaMundo2122.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/POO.iml" filepath="$PROJECT_DIR$/.idea/POO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practica2/Practica2.iml" filepath="$PROJECT_DIR$/Practica2/Practica2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practica3/Practica3.iml" filepath="$PROJECT_DIR$/Practica3/Practica3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practica4/Practica4.iml" filepath="$PROJECT_DIR$/Practica4/Practica4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practica4.1/Practica4.1.iml" filepath="$PROJECT_DIR$/Practica4.1/Practica4.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practica4.2/Practica4.2.iml" filepath="$PROJECT_DIR$/Practica4.2/Practica4.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practica4.3/Practica4.3.iml" filepath="$PROJECT_DIR$/Practica4.3/Practica4.3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practica5/Practica5.iml" filepath="$PROJECT_DIR$/Practica5/Practica5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practica6/Practica6.iml" filepath="$PROJECT_DIR$/Practica6/Practica6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PracticaGrupal_apartado2/PracticaGrupal_apartado2.iml" filepath="$PROJECT_DIR$/PracticaGrupal_apartado2/PracticaGrupal_apartado2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PracticaGrupal_apartado2-2/PracticaGrupal_apartado2-2.iml" filepath="$PROJECT_DIR$/PracticaGrupal_apartado2-2/PracticaGrupal_apartado2-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PruebaUML/PruebaUML.iml" filepath="$PROJECT_DIR$/PruebaUML/PruebaUML.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TrabajoAvanzadoPOO/TrabajoAvanzadoPOO.iml" filepath="$PROJECT_DIR$/TrabajoAvanzadoPOO/TrabajoAvanzadoPOO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practicagrupal/practicagrupal.iml" filepath="$PROJECT_DIR$/practicagrupal/practicagrupal.iml" />
+    </modules>
+  </component>
+</project>
